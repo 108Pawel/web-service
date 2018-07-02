@@ -78,4 +78,15 @@ public class ReadResource {
 
 	}
 
+	//method for testing cloud instances
+	@GET
+	@Produces(MediaType.APPLICATION_JSON) // .APPLICATION_XML
+	@Path("test") 
+	public ExistsCheck getUser() {
+
+		ExistCheck check = new ExistCheck();
+		check.setExsists("exists");
+		return check;
+	}
+
 }
