@@ -148,6 +148,9 @@
     <appengine.target.version>1.9.64</appengine.target.version>
     <appengine-maven-plugin-version>1.3.2</appengine-maven-plugin-version>
   
-
+    <INSTANCE_CONNECTION_NAME>donedoo-web:donedoo-sql</INSTANCE_CONNECTION_NAME>
+    <user>test</user>
+    <password>test</password>
+    <database>donedoo</database>
     </properties>
 </project>
