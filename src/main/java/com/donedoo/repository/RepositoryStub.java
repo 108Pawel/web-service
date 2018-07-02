@@ -19,12 +19,12 @@ public class RepositoryStub implements RepositoryInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.pluralsight.repository.ActivityRepository#findAllActivities()
 	 */
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.pluralsight.repository.ActivityRepository#findAllActivities()
 	 */
 
@@ -36,8 +36,8 @@ public class RepositoryStub implements RepositoryInterface {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// Step 1: Allocate a database 'Connection' object
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/donedoo?useSSL=false", "test",
-					"test");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://google/donedoo?cloudSqlInstance=donedoo-web:donedoo&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false");
+
 			// MySQL: "jdbc:mysql://hostname:port/databaseName", "username", "password"
 
 			// Step 2: Allocate a 'Statement' object in the Connection
@@ -148,7 +148,7 @@ public class RepositoryStub implements RepositoryInterface {
 
 			if (rset.next()) {
 				tempUser.setExists(rset.getString("admin").toString());
-				
+
 			} else {
 				tempUser.setExists("Not Exist");
 			}
@@ -426,7 +426,7 @@ public class RepositoryStub implements RepositoryInterface {
 			Statement stmt = conn.createStatement();
 			String query;
 
-			query = "Update users set username='" + user.getUserName() + "', password='" + user.getPassword() + "', admin='" + user.getAdmin() 
+			query = "Update users set username='" + user.getUserName() + "', password='" + user.getPassword() + "', admin='" + user.getAdmin()
 					+ "' WHERE groupname = '" + user.getGroupName() + "'";
 			System.out.println(query);
 
@@ -568,8 +568,8 @@ public class RepositoryStub implements RepositoryInterface {
 		return user;
 
 	}
-	
-	
+
+
 	@Override
 	public User updateOtherUser(User user) {
 
@@ -583,7 +583,7 @@ public class RepositoryStub implements RepositoryInterface {
 			// Step 2: Allocate a 'Statement' object in the Connection
 			Statement stmt = conn.createStatement();
 			String query;
-			
+
 			System.out.println("updating: " +user.getUserName()+" " + user.getGroupName());
 
 			query = "UPDATE users set admin = 1 WHERE groupname = '" + user.getGroupName()
@@ -635,9 +635,9 @@ public class RepositoryStub implements RepositoryInterface {
 		// return null;
 
 	}
-	
-	
-	
+
+
+
 	/////////// Deleting user
 	@Override
 	public void deleteUser(String username, String groupname) {
