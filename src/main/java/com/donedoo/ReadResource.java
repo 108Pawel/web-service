@@ -82,7 +82,7 @@ public class ReadResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON) // .APPLICATION_XML
 	@Path("test") 
-	public ExistsCheck getUser() {
+	public ExistsCheck getTest() {
 
 		ExistCheck check = new ExistCheck();
 		check.setExsists("exists");
