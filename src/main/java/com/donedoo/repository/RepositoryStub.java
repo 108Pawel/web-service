@@ -36,7 +36,7 @@ public class RepositoryStub implements RepositoryInterface {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// Step 1: Allocate a database 'Connection' object
-			Connection conn = DriverManager.getConnection("jdbc:mysql://google/donedoo?cloudSqlInstance=donedoo-web:donedoo&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://google/donedoo?cloudSqlInstance=donedoo-web:donedoo&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false","test","test");
 
 			// MySQL: "jdbc:mysql://hostname:port/databaseName", "username", "password"
 
