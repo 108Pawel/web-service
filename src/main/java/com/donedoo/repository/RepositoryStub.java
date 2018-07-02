@@ -2,7 +2,6 @@ package com.pluralsight.repository;
 
 import java.io.Console;
 import java.sql.Connection;
-import java.sql.SocketFactory;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
