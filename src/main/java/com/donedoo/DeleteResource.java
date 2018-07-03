@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.donedoo;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -10,12 +10,12 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 
-import com.pluralsight.model.Change;
-import com.pluralsight.model.Task;
-import com.pluralsight.model.User;
-import com.pluralsight.model.ExistsCheck;
-import com.pluralsight.repository.RepositoryInterface;
-import com.pluralsight.repository.RepositoryStub;
+import com.donedoo.model.Change;
+import com.donedoo.model.ExistsCheck;
+import com.donedoo.model.Task;
+import com.donedoo.model.User;
+import com.donedoo.repository.RepositoryInterface;
+import com.donedoo.repository.RepositoryStub;
 
 @Path("delete")
 public class DeleteResource {

@@ -1,4 +1,4 @@
-package com.pluralsight.model;
+package com.donedoo.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

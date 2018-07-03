@@ -1,4 +1,4 @@
-package com.pluralsight.repository;
+package com.donedoo.repository;
 
 import java.io.Console;
 import java.sql.Connection;
@@ -10,22 +10,22 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.pluralsight.model.Change;
-import com.pluralsight.model.Task;
-import com.pluralsight.model.User;
-import com.pluralsight.model.ExistsCheck;
+import com.donedoo.model.Change;
+import com.donedoo.model.ExistsCheck;
+import com.donedoo.model.Task;
+import com.donedoo.model.User;
 
 public class RepositoryStub implements RepositoryInterface {
 
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see com.pluralsight.repository.ActivityRepository#findAllActivities()
+	 * @see com.donedoo.repository.ActivityRepository#findAllActivities()
 	 */
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see com.pluralsight.repository.ActivityRepository#findAllActivities()
+	 * @see com.donedoo.repository.ActivityRepository#findAllActivities()
 	 */
 
 	@Override
@@ -35,16 +35,15 @@ public class RepositoryStub implements RepositoryInterface {
 		String url;
 		try {
 
-			  if (SystemProperty.environment.value() ==
-			      SystemProperty.Environment.Value.Production) {
-			    // Load the class that provides the new "jdbc:google:mysql://" prefix.
-			    Class.forName("com.mysql.jdbc.GoogleDriver");
-			    url = "jdbc:google:mysql://donedoo-web:europe-west1:donedoo2/donedoo2?user=test&password=test";
-			  } else {
+			 
+			    //for cloud instance Load the class that provides the new "jdbc:google:mysql://" prefix.
+			//    Class.forName("com.mysql.jdbc.GoogleDriver");
+			//    url = "jdbc:google:mysql://donedoo-web:europe-west1:donedoo2/donedoo2?user=test&password=test";
+			  
 			    // Local MySQL instance to use during development.
 			    Class.forName("com.mysql.jdbc.Driver");
 			    url = "jdbc:mysql://google/donedoo2?cloudSqlInstance=donedoo-web:europe-west1:donedoo2&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false";
-  }
+  
 
 			//Class.forName("com.mysql.jdbc.GoogleDriver");
 			// Step 1: Allocate a database 'Connection' object

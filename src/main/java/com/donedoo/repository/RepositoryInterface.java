@@ -1,18 +1,18 @@
-package com.pluralsight.repository;
+package com.donedoo.repository;
 
 import java.util.List;
 
-import com.pluralsight.model.Change;
-import com.pluralsight.model.Task;
-import com.pluralsight.model.User;
-import com.pluralsight.model.ExistsCheck;
+import com.donedoo.model.Change;
+import com.donedoo.model.ExistsCheck;
+import com.donedoo.model.Task;
+import com.donedoo.model.User;
 
 public interface RepositoryInterface {
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.pluralsight.repository.ActivityRepository#findAllActivities()
+	 * @see com.donedoo.repository.ActivityRepository#findAllActivities()
 	 */
 	// Repository interface for TaskRepositoryStub
 	List<Task> findAllTasks(String groupName);
