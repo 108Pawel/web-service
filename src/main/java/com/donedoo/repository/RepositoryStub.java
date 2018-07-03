@@ -34,9 +34,21 @@ public class RepositoryStub implements RepositoryInterface {
 		List<Task> taskList = new ArrayList<Task>();
 
 		try {
-			Class.forName("com.mysql.jdbc.GoogleDriver");
+
+			  if (SystemProperty.environment.value() ==
+			      SystemProperty.Environment.Value.Production) {
+			    // Load the class that provides the new "jdbc:google:mysql://" prefix.
+			    Class.forName("com.mysql.jdbc.GoogleDriver");
+			    url = "jdbc:google:mysql://donedoo-web:europe-west1:donedoo2/donedoo2?user=test&password=test";
+			  } else {
+			    // Local MySQL instance to use during development.
+			    Class.forName("com.mysql.jdbc.Driver");
+			    url = "jdbc:mysql://google/donedoo2?cloudSqlInstance=donedoo-web:europe-west1:donedoo2&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false";
+  }
+
+			//Class.forName("com.mysql.jdbc.GoogleDriver");
 			// Step 1: Allocate a database 'Connection' object
-			Connection conn = DriverManager.getConnection("jdbc:mysql://google/donedoo2?cloudSqlInstance=donedoo-web:europe-west1:donedoo2&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false");//jdbc:mysql://google/donedoo2?cloudSqlInstance=donedoo-web:europe-west1:donedoo2&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false
+			Connection conn = DriverManager.getConnection(url);//jdbc:mysql://google/donedoo2?cloudSqlInstance=donedoo-web:europe-west1:donedoo2&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false
 
 			// MySQL: "jdbc:mysql://hostname:port/databaseName", "username", "password"
 
