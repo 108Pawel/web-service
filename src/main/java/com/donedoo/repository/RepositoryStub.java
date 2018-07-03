@@ -37,12 +37,12 @@ public class RepositoryStub implements RepositoryInterface {
 
 			 
 			    //for cloud instance Load the class that provides the new "jdbc:google:mysql://" prefix.
-			//    Class.forName("com.mysql.jdbc.GoogleDriver");
-			//    url = "jdbc:google:mysql://donedoo-web:europe-west1:donedoo2/donedoo2?user=test&password=test";
+			    Class.forName("com.mysql.jdbc.GoogleDriver");
+			    url = "jdbc:google:mysql://donedoo-web:europe-west1:donedoo2/donedoo2?user=test&password=test";
 			  
 			    // Local MySQL instance to use during development.
-			    Class.forName("com.mysql.jdbc.Driver");
-			    url = "jdbc:mysql://google/donedoo2?cloudSqlInstance=donedoo-web:europe-west1:donedoo2&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false";
+			//    Class.forName("com.mysql.jdbc.Driver");
+			  //  url = "jdbc:mysql://google/donedoo2?cloudSqlInstance=donedoo-web:europe-west1:donedoo2&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=test&password=test&useSSL=false";
   
 
 			//Class.forName("com.mysql.jdbc.GoogleDriver");
