@@ -32,7 +32,7 @@ public class RepositoryStub implements RepositoryInterface {
 	public List<Task> findAllTasks(String groupName) {
 		// String groupName="1";
 		List<Task> taskList = new ArrayList<Task>();
-
+		String url;
 		try {
 
 			  if (SystemProperty.environment.value() ==
